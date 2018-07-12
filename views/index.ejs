@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Record</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
+    <style type="text/css">
+        .wrapper{
+            width: 500px;
+            margin: 0 auto;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <script type="application/javascript">
+        /** After windod Load */
+       /* $(window).bind("load", function() {
+          window.setTimeout(function() {
+            $(".alert").fadeTo(500, 0).slideUp(500, function(){
+                $(this).remove();
+            });
+        }, 1000);
+        });*/
+        </script>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    
+        
+                    <div class="page-header clearfix">
+                        
+                        <h2><%= title %></h2>
+                        
+                    </div>
+                    <p>Please fill this form and submit to get the current City weather.</p>
+                    <form action="/" method="post">
+                        <div class="form-group">
+                            <label>Enter City Name</label>
+                            <input type="text" name="city" class="form-control" placeholder="Enter a City" required>
+                            <span class="help-block"></span>
+                        </div>
+                        
+                        <input type="submit" class="btn btn-primary" value="Get Weather">
+                    </form>
+                    <% if(weather !== null){ %>
+                      <p><%= weather %></p>
+                    <% } %>
+
+                    <% if(error !== null){ %>
+                      <p><%= error %></p>
+                    <% } %>
+                </div>
+            </div>        
+        </div>
+    </div>
+</body>
+</html>
